@@ -13371,6 +13371,12 @@ $.rawCitiesData = [
           cssClass: "col-district"
         });
 
+      var customOnChange = null;
+      if (params.onChange) {
+        customOnChange = params.onChange;
+        delete params.onChange;
+      }
+
       var config = {
 
         cssClass: "city-picker",
@@ -13399,8 +13405,8 @@ $.rawCitiesData = [
             }
           }
 
-          if (params.onChange) {
-            params.onChange(picker, values, displayValues);
+          if (customOnChange) {
+            customOnChange(picker, values, displayValues);
           }
         },
 
