@@ -35,6 +35,13 @@ gulp.task('js', function(cb) {
     .on("end", end);
 
   gulp.src([
+    './src/js/city-picker.js'
+  ])
+    .pipe(concat({ path: 'city-picker-standalone.js'}))
+    .pipe(gulp.dest('./dist/js/'))
+    .on("end", end);
+
+  gulp.src([
     './src/js/swiper.jquery.js',
     './src/js/swiper-wrap.js',
     './src/js/photos.js'
