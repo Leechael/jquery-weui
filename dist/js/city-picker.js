@@ -13344,7 +13344,7 @@ $.rawCitiesData = [
         return [""];
       };
 
-      var raw = $.rawCitiesData;
+      var raw = $.rawCitiesData || window.weuiRawCitiesData;
       var provinces = raw.map(function(d) {
         return d.name;
       });
